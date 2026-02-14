@@ -75,7 +75,7 @@ def extract_code_and_thought(response_text: str) -> Tuple[Optional[str], str]:
     if open_idx == -1:
         return None, response_text.strip()
 
-    close_idx = response_text.rfind(close_tag)
+    close_idx = response_text.find(close_tag, open_idx)
     if close_idx == -1:
         return None, response_text.strip()
 
